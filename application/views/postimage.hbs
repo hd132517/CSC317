@@ -1,0 +1,15 @@
+<div id="main-content">
+    <form class="imagePostBox" method="POST" enctype="multipart/form-data" action="/posts/createPost">
+        <label>Post Title:</label>
+        <input type="text" placeholder="post Title" name="title" required>
+        <br>
+        <label>Post Description:</label>
+        <input type="text" placeholder="post Description" name="description">
+        <br>
+        <input type="file" accept="image/*" name="uploadImage" required>
+        <br><br>
+        <input type="checkbox" required> I accept Acceptable Use Policy for uploading images
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>

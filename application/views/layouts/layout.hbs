@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="\public\css\sfsuheader.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="\public\js\frontendjs.js"></script>
+  </head>
+  <body>
+    {{#if header1}}
+    <div class="header">
+        <div class="left_header">
+            <a class="big_span" href="/" style="text-decoration:none">SAN FRANCISCO STATE UNIVERSITY |</a>
+            <a class="small_span">{{webpage}}</a>
+        </div>
+        <ul class="right_header">
+            <li>
+                A–Z | <a href="/postimage" style="text-decoration:none">PostImage</a> | {{#if logged}}<a href="/" style="text-decoration:none" id="logout">Logout</a>{{else}}<a href="/login" style="text-decoration:none">Login</a>{{/if}}
+            </li>
+            <li>
+                <div>
+                    <input class="input_search" type="text" placeholder="Search" id="search">
+                    <button class="input_button" type="submit" id="searchButton">🔍</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {{{body}}}
+    <footer class="footer">
+        <div class="footer_container">
+            <div class="footer_left">
+                <a href="/"><img class="footer_logo" src="\public\images\SFState_Logo_footer.png" ></a>
+                <ul class="footer_list">
+                    <li>San Francisco State University</li>
+                    <li>A California State University Campus</li>
+                </ul>
+            </div>
+            <div class="footer_left" style="text-align: right">
+                <ul class="footer_list">
+                    <li>CSC317 Term Project</li>
+                    <li>Web Contact: skaehdgus1@gmail.com</li>
+                    <li>Donghyun Nam</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    {{/if}}
+    {{#if header2}}
+    <div class="background">
+      <div class="whiteBox">
+          <a href="/"><img class="logo" src="\public\images\SFState_Logo.png"></a>
+          <div class="title">
+              <h1>{{webpage}}</h1>
+          </div>
+          {{{body}}}
+      </div>
+    </div>
+    {{/if}}
+  </body>
+</html>
+
+{{#if logged}}
+<script>
+    let logout = document.getElementById("logout");
+    if (logout) {
+        logout.onclick = (even) => {
+            fetch('/users/logout', {
+                method: "POST"
+            })
+            .then((data) => {
+                location.replace('/');
+            });
+        }
+    }
+</script>
+{{/if}}

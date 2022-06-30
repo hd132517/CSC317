@@ -1,0 +1,15 @@
+<script type="text/javascript" src="\public\js\registration.js"></script>
+
+<form class="Box" method="POST" action="/users/register" enctype="application/x-www-form-urlencoded" onsubmit="return formValidation();">
+    <label>Username</label>
+    <input class="input" type="text" id="uname" placeholder="Username" name="username" required>
+    <label>SF State E-Mail</label>
+    <input class="input" type="email" placeholder="E-Mail" name="email" required>
+    <label>Password</label>
+    <input class="input" type="password" id="pword" placeholder="Password" name="password" required>
+    <label>Confirm Password</label>
+    <input class="input" type="password" id="pword2" placeholder="Confirm Password" name="cpassword" required>
+    <label> <input class="checkbox" type="checkbox" required> I am 13+ years of age </label>
+    <a class="tos" href="#" style="color:#464666" required>TOS and Privacy Rules</a>
+    <input class="button" type="submit" value="Register">
+</form>
